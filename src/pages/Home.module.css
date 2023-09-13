@@ -4,8 +4,6 @@
 
   padding: 80px;
 
-  background: #333333;
-
   background-image: url(../img/1687770497_bogatyr-club-p-doroga-iz-mashini-oboi-instagram-2.jpg);
 
   background-size: cover;
@@ -30,6 +28,8 @@
 .text {
   color: #f3f3f3;
   width: 600px;
+
+  margin-bottom: 20px;
 
   font-size: 14px;
   font-style: normal;

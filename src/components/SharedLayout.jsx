@@ -4,13 +4,13 @@ import css from './SharedLayout.module.css';
 
 export const SharedLayout = () => {
   return (
-    <div className={css.header}>
+    <div className={css.container}>
       <div>
-        <nav>
+        <nav className={css.header}>
           <NavLink to="/" className={css.logo}>
             Rent Car
           </NavLink>
-          <div className={css.container}>
+          <div className={css.nav}>
             <NavLink to="/" className={css.nav}>
               Home
             </NavLink>

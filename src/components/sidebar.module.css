@@ -1,0 +1,76 @@
+.container {
+  width: 859px;
+  height: 74px;
+
+  margin: 50px auto;
+}
+
+.form {
+  display: flex;
+}
+
+.label {
+  color: #8a8a89;
+  font-family: Manrope;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.car_brend {
+  display: flex;
+  /* padding: 14px 89px 14px 18px; */
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+
+  border-radius: 14px;
+  background: #f7f7fb;
+}
+
+.price {
+  display: flex;
+  width: 125px;
+  /* padding: 14px 18px; */
+  align-items: flex-start;
+  gap: 32px;
+
+  border-radius: 14px;
+  background: #f7f7fb;
+}
+
+.mileage {
+  display: flex;
+  width: 160px;
+  height: 48px;
+  /* padding: 14px 93px 14px 24px; */
+  align-items: center;
+  flex-shrink: 0;
+
+  border-radius: 14px 0px 0px 14px;
+  border-right: 1px solid rgba(138, 138, 137, 0.2);
+  background: #f7f7fb;
+}
+
+.button {
+  display: flex;
+  width: 136px;
+  height: 48px;
+  /* padding: 14px 44px; */
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+
+  border-radius: 12px;
+  background: #3470ff;
+
+  transition: background-color 400ms, color 400ms;
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background: #0b44cd;
+  }
+}

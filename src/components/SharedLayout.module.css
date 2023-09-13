@@ -1,11 +1,5 @@
 .container {
   background-color: #fff;
-
-  /* background-image: url(../img/1687770497_bogatyr-club-p-doroga-iz-mashini-oboi-instagram-2.jpg);
-
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center; */
 }
 
 .header {
@@ -13,7 +7,17 @@
 
   display: flex;
 
-  background-color: rgba(51, 51, 51, 0.5);
+  background-color: rgba(193, 185, 185, 0.5);
+}
+
+.logo {
+  font-family: Bradley Hand, cursive;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 22px;
+
+  color: #220707;
 }
 
 .nav {
@@ -21,4 +25,11 @@
   gap: 20px;
 
   margin-left: auto;
+
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+
+  color: #220707;
 }

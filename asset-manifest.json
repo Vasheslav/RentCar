@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/RentCar/static/css/main.103bc44e.css",
-    "main.js": "/RentCar/static/js/main.d74afdad.js",
-    "static/css/750.b2f63b44.chunk.css": "/RentCar/static/css/750.b2f63b44.chunk.css",
-    "static/js/750.11305ea0.chunk.js": "/RentCar/static/js/750.11305ea0.chunk.js",
+    "main.css": "/RentCar/static/css/main.c118bee4.css",
+    "main.js": "/RentCar/static/js/main.68d693cf.js",
+    "static/css/750.abffc7fe.chunk.css": "/RentCar/static/css/750.abffc7fe.chunk.css",
+    "static/js/750.7cf7d09d.chunk.js": "/RentCar/static/js/750.7cf7d09d.chunk.js",
     "static/js/395.abc6e916.chunk.js": "/RentCar/static/js/395.abc6e916.chunk.js",
     "static/media/1687770497_bogatyr-club-p-doroga-iz-mashini-oboi-instagram-2.jpg": "/RentCar/static/media/1687770497_bogatyr-club-p-doroga-iz-mashini-oboi-instagram-2.db32ea6cbb065414f78f.jpg",
     "index.html": "/RentCar/index.html",
-    "main.103bc44e.css.map": "/RentCar/static/css/main.103bc44e.css.map",
-    "main.d74afdad.js.map": "/RentCar/static/js/main.d74afdad.js.map",
-    "750.b2f63b44.chunk.css.map": "/RentCar/static/css/750.b2f63b44.chunk.css.map",
-    "750.11305ea0.chunk.js.map": "/RentCar/static/js/750.11305ea0.chunk.js.map"
+    "main.c118bee4.css.map": "/RentCar/static/css/main.c118bee4.css.map",
+    "main.68d693cf.js.map": "/RentCar/static/js/main.68d693cf.js.map",
+    "750.abffc7fe.chunk.css.map": "/RentCar/static/css/750.abffc7fe.chunk.css.map",
+    "750.7cf7d09d.chunk.js.map": "/RentCar/static/js/750.7cf7d09d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.103bc44e.css",
-    "static/js/main.d74afdad.js"
+    "static/css/main.c118bee4.css",
+    "static/js/main.68d693cf.js"
   ]
 }

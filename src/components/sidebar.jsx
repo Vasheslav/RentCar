@@ -1,29 +1,36 @@
+import icon from '../img/icon.svg';
 import css from './sidebar.module.css';
 
 const Sidebar = () => {
   return (
     <div className={css.container}>
       <form className={css.form}>
-        <label className={css.label}>
-          Car brand
-          <input
-            type="text"
-            name="Car_brand"
-            placeholder="Enter the text"
-            className={css.car_brend}
-          />
+        <label>
+          <span className={css.label}>Car brand</span>
+          <div className={css.box_icon}>
+            <input
+              type="text"
+              name="Car_brand"
+              placeholder="Enter the text"
+              className={css.car_brend}
+            />
+            <img src={icon} alt="Car brand icon" className={css.icon} />
+          </div>
         </label>
-        <label className={css.label}>
-          Price/ 1 hour
-          <input
-            type="text"
-            name="Price"
-            placeholder="To $"
-            className={css.price}
-          />
+        <label>
+          <span className={css.label}>Price/ 1 hour</span>
+          <div className={css.box_icon}>
+            <input
+              type="text"
+              name="Price"
+              placeholder="To $"
+              className={css.price}
+            />
+            <img src={icon} alt="Car brand icon" className={css.icon} />
+          </div>
         </label>
-        <label className={css.label}>
-          Сar mileage / km
+        <label>
+          <span className={css.label}>Сar mileage / km</span>
           <div className={css.box}>
             <input
               type="text"

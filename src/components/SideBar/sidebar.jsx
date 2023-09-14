@@ -1,4 +1,4 @@
-import icon from '../img/icon.svg';
+import icon from '../../img/icon.svg';
 import css from './sidebar.module.css';
 
 const Sidebar = () => {

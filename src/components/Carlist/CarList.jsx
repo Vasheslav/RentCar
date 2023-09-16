@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import CarItem from '../CarItem/CarItem';
-import { Button } from '../Button/Button';
+import Button from '../Button/Button';
 import { Loader } from '../loader/Loader';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import css from './CarList.module.css';
 
 const BASE_URL = 'https://650300cba0f2c1f3faeb4487.mockapi.io/catalog';
 const notify = () => toast('Nothing found');
@@ -13,42 +15,44 @@ const messageError = () =>
   toast('An error occurred, please try again or enter a different value');
 
 const CarList = () => {
-  const [cars, setCars] = useState([]);
-  const [page, setPage] = useState(1);
+  const [allCars, setAllCars] = useState([]);
+  const [paginatedData, setPaginatedData] = useState([]);
   const [status, setStatus] = useState('idle');
   const [showButton, setShowButton] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
-    const firstPage = 1;
-    setPage(firstPage);
-    setCars([]);
-
     setStatus('pending');
 
     axios
-      .get(`${BASE_URL}?page=${firstPage}&per_page=8`)
+      .get(BASE_URL)
       .then(res => {
         if (res.data.length === 0) {
           notify();
         }
-        setCars(prevCars => [...prevCars, ...res.data]);
+        setAllCars(res.data);
+        const initialPageData = res.data.slice(0, itemsPerPage);
+        setPaginatedData(initialPageData);
         setStatus('resolved');
-        setShowButton(res.data.length >= 8);
+        setShowButton(res.data.length >= itemsPerPage);
       })
       .catch(error => messageError());
   }, []);
 
+  const itemsPerPage = 8;
+
   const onChangePage = () => {
-    let nextPage = page + 1;
-    setPage(nextPage);
-    axios
-      .get(`${BASE_URL}?page=${nextPage}&per_page=8`)
-      .then(res => {
-        setCars(prevCars => [...prevCars, ...res.data]);
-        setStatus('resolved');
-        setShowButton(res.data.length >= 8);
-      })
-      .catch(error => messageError());
+    const nextPage = currentPage + 1;
+    const startIndex = (nextPage - 1) * itemsPerPage;
+    const endIndex = nextPage * itemsPerPage;
+
+    if (endIndex >= allCars.length) {
+      setShowButton(false);
+    }
+
+    const newPaginatedData = allCars.slice(startIndex, endIndex);
+    setPaginatedData([...paginatedData, ...newPaginatedData]);
+    setCurrentPage(nextPage);
   };
 
   if (status === 'idle') {
@@ -78,9 +82,9 @@ const CarList = () => {
 
   if (status === 'resolved') {
     return (
-      <div>
-        <ul>
-          {cars.map(item => (
+      <div className={css.container}>
+        <ul className={css.list}>
+          {paginatedData.map(item => (
             <CarItem
               key={item.id}
               year={item.year}

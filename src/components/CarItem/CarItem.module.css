@@ -1,0 +1,115 @@
+.container {
+  width: 274px;
+  height: 426px;
+
+  position: relative;
+}
+
+.heart {
+  position: absolute;
+
+  right: 14px;
+  top: 14px;
+
+  cursor: pointer;
+}
+
+.img {
+  height: 268px;
+  width: 274px;
+
+  background-size: cover;
+
+  margin-bottom: 14px;
+}
+
+.tittle_box {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 8px;
+}
+
+.title {
+  color: #121417;
+
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  /* gap: 12px; */
+
+  padding: 0;
+  margin-bottom: 28px;
+}
+
+.text {
+  position: relative;
+
+  color: rgba(18, 20, 23, 0.5);
+  font-family: Manrope;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+
+  &:not(:last-child) {
+    padding-right: 6px;
+    margin-right: 6px;
+  }
+}
+
+.text_line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 16px;
+  width: 1px;
+  background-color: rgba(18, 20, 23, 0.1);
+  margin-left: 6px;
+}
+
+.button {
+  display: flex;
+  width: 274px;
+  height: 44px;
+  padding: 12px 99px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+
+  border-radius: 12px;
+  background: #3470ff;
+  border: none;
+
+  &:hover,
+  &:focus {
+    background: #0b44cd;
+  }
+}
+
+.modal_box {
+  position: relative;
+  width: 541px;
+  height: 752px;
+
+  padding: 40px;
+  flex-shrink: 0;
+  border-radius: 24px;
+  background: #fff;
+}
+
+.icon {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+
+  cursor: pointer;
+}

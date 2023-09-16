@@ -2,6 +2,8 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import ModalWindow from '../Modal/Modal';
 import css from './CarItem.module.css';
+import closeIcon from '../../img/x.svg';
+import heart from '../../img/heart.svg';
 
 const CarItem = ({
   year,
@@ -22,17 +24,59 @@ const CarItem = ({
 }) => {
   const [showModal, setShowModal] = useState(false);
 
+  const parts = address.split(', ');
+
   const toggleModal = () => {
     setShowModal(!showModal);
   };
 
   return (
     <div>
-      <p>{year}</p>
-      <p>{model}</p>
+      <div className={css.container}>
+        <img
+          src={heart}
+          alt="heart"
+          className={css.heart}
+          onClick={addToFavorites}
+        />
+        <img src={img} alt="avto" className={css.img} />
+        <div className={css.tittle_box}>
+          <h1 className={css.title}>
+            {make}&nbsp;
+            {model}, {year}
+          </h1>
+          <h1 className={css.title}>{rentalPrice}</h1>
+        </div>
+        <ul className={css.list}>
+          <li className={`${css.text} ${css.text_line}`}>
+            {parts[parts.length - 2]}
+          </li>
+          <li className={`${css.text} ${css.text_line}`}>
+            {parts[parts.length - 1]}
+          </li>
+          <li className={`${css.text} ${css.text_line}`}>{rentalCompany}</li>
+          <li className={`${css.text} ${css.text_line}`}>{type}</li>
+          <li className={css.text}>{mileage}</li>
+        </ul>
+        <button type="button" className={css.button} onClick={toggleModal}>
+          Learn more
+        </button>
+      </div>
       {showModal && (
         <ModalWindow onClose={toggleModal}>
-          {/* <img src={largeImg} alt={tags} /> */}
+          <div className={css.modal_box}>
+            <img
+              src={closeIcon}
+              alt="close"
+              className={css.icon}
+              onClick={toggleModal}
+            />
+            <img src={img} alt="avto" />
+            <h1 className={css.title}>
+              {make}&nbsp;
+              {model}, {year}
+            </h1>
+          </div>
         </ModalWindow>
       )}
     </div>

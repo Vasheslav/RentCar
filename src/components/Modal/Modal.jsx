@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import css from './Modal.module.css';
 
 const ModalWindow = ({ children, onClose }) => {
   useEffect(() => {
@@ -23,8 +24,8 @@ const ModalWindow = ({ children, onClose }) => {
   };
 
   return (
-    <div onClick={handleBackdropClick}>
-      <div>{children}</div>
+    <div onClick={handleBackdropClick} className={css.overley}>
+      <div className={css.modal}>{children}</div>
     </div>
   );
 };
